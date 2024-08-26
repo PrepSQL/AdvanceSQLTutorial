@@ -12,7 +12,7 @@ CREATE TABLE Product(
 	name VARCHAR(255) NOT NULL,
 	unit_price FLOAT NOT NULL, -- DEFAULT 0.0
 	category_name VARCHAR(255),
-	description TEXT	
+	description TEXT
 );
 
 -- CREATE TABLE Orders
@@ -81,3 +81,36 @@ INSERT INTO Orders VALUES (13, 3, 9, 2, '2024-02-04');
 INSERT INTO Orders VALUES (14, 15, 5, 3, '2024-03-05');
 INSERT INTO Orders VALUES (15, 8, 6, 2, '2024-03-05');
 INSERT INTO Orders VALUES (16, 10, 9, 2, '2024-03-05');
+
+
+-- Table for tournament participants
+CREATE TABLE TournamentParticipants(
+	participant_id SERIAL PRIMARY KEY,
+	participant_name VARCHAR(255) NOT NULL,
+	parent_id int,
+	is_player boolean
+);
+
+
+-- Insert data into Tournamentparticipants
+INSERT INTO TournamentParticipants VALUES(1, 'James Smith', NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(2, 'Michael Brown', 10 , TRUE);
+INSERT INTO TournamentParticipants VALUES(3, 'John Miller',11 , TRUE);
+INSERT INTO TournamentParticipants VALUES(4, 'William Johnson',12, TRUE);
+INSERT INTO TournamentParticipants VALUES(5, 'George Jones', 13 , TRUE);
+INSERT INTO TournamentParticipants VALUES(6, 'Henry Davis', 14, TRUE);
+INSERT INTO TournamentParticipants VALUES(7, 'Britney Williams',15 ,TRUE);
+INSERT INTO TournamentParticipants VALUES(8, 'Tom Swift', 18,TRUE);
+INSERT INTO TournamentParticipants VALUES(9, 'Joseph Clark', 19, TRUE);
+INSERT INTO TournamentParticipants VALUES(10, 'Jim Brown', NULL, FALSE); --10
+INSERT INTO TournamentParticipants VALUES(11, 'Ram Miller',NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(12, 'Anita Johnson', NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(13, 'Uogu Jones', NULL,FALSE);
+INSERT INTO TournamentParticipants VALUES(14, 'Sanjog Davis', NULL,FALSE);
+INSERT INTO TournamentParticipants VALUES(15, 'Sai Williams', NULL,FALSE); --15
+INSERT INTO TournamentParticipants VALUES(16, 'Harry Potter', 20, TRUE);
+INSERT INTO TournamentParticipants VALUES(17, 'Peter Parker', 21, TRUE);
+INSERT INTO TournamentParticipants VALUES(18, 'Harry Swift', NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(19, 'Peter Clark', NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(20, 'John Potter', NULL, FALSE);
+INSERT INTO TournamentParticipants VALUES(21, 'Samantha Parker', NULL, FALSE);
