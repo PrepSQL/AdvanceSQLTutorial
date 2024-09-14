@@ -37,8 +37,6 @@ CREATE TABLE Orders(
 
 ```
 
-#### MYSQL
-
 #### Inserting Data:
 
 ##### Customer
