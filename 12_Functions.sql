@@ -4,7 +4,7 @@ Defination:
 A function is a pre-built actions that performs calculations, manipulate data, and return results.
 
 Some Common Functions (in POSTGRES):
-1. String functions - Length(), Trim(),LOWER(), UPPER() {UCASE() in MySQL}, LOCATE(), ascii('charvalue'), 
+1. String functions - Length(), Trim(), LOWER(), UPPER() {UCASE() in MySQL}, LOCATE(), ascii('char_value'), 
         LEFT('STR', length), RIGHT('STR', length) SUBSTRING('STR', START, LENGTH), REVERSE(), LTRIM(), RTRIM(), FORMAT('0.08','Percent') 
 2. Numeric functions CEIL(), COS(), SIN(), FLOOR(), EXP(), GREATEST(), LOG()
 3. Statistical functions - avg(), sum(), count(), min(), max(), var()/variance(), stddev()/stddev_pop(), 

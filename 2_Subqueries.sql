@@ -1,7 +1,7 @@
 -- SubQueries
 /*
 Defination:
-A subquery is a query nested within another query. The subqueries can be presented in the FROM clause, WHERE clause or the SELECT clause.
+A subquery is a query nested within another query. The subquery can be nested inside a SELECT, INSERT, UPDATE, or DELETE statement, or inside another subquery.
 
 
 Usage:

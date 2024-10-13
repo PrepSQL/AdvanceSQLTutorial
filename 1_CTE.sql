@@ -40,7 +40,7 @@ Code Example:
 
 
 
--- Recursive CTE : Example - SUM of [1, 2, 3 .... 99, 100] recursively
+-- Recursive CTE : Example 1 - SUM of [1, 2, 3 .... 99, 100] recursively
 
 WITH RECURSIVE t(n) AS (
     VALUES (1)

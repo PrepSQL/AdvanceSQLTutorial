@@ -15,6 +15,11 @@ A materialized view, on the other hand, stores the results of a specific query a
 A normal view when queried is computed everytime and a materialized view is precomputed so they give 
 a boost in performance. 
 
+SQL View:
+A view is a virtual table defined by a SQL query. It does not store data physically but provides a way to look at data from one or more tables.
+Materialized View:
+A materialized view (also known as a snapshot) is a database object that stores the result of a query physically. Unlike a regular view, it holds data on disk and needs to be refreshed to stay updated.
+
 Usage:
 - Saving computing a query multiple times using materialized view
 - Simplifying query and reducing re-write of same logic

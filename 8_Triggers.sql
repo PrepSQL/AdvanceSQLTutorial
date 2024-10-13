@@ -10,7 +10,7 @@ A database operation (SERVERERROR, LOGON, LOGOFF, STARTUP, or SHUTDOWN).
 
 Usage:
 - To allows you to specify SQL actions that should be executed automatically when a specific event occurs in the database. 
-- To automatically update a record in one table whenever a record is inserted into another table.
+- To automatically update a record in one table whenever a record is changed/inserted into another table.
 
 Syntax:
 [In postgres a Trigger can be created with following syntax]
@@ -39,14 +39,13 @@ value (making it a function) that is invoked by calling it explicitly.
 A trigger is a stored procedure that runs automatically when various events happen (eg update, insert, delete).
 
 Trigger vs Stored Procedure: Using OOP concepts, Stored Procedure can be though of a method in an OOP and Triggers can be 
-though of event handler
-that can handle the event itself or do some processing and allow for the event to continue using a method.
+though of event handler that can handle the event itself or do some processing and allow for the event to continue using a method.
 
 Code Example:
 */
 
 -- Let's create a value anamoly log table
-Create table value_anamoly_log(
+Create table value_anomaly_log(
     id int,
     created_at timestamp,
     created_by_user varchar(255)
@@ -55,28 +54,28 @@ Create table value_anamoly_log(
 
 -- Example 1: Placing a trigger when person inserts an invalid data i.e price < 0 or price > 1000$
 
-CREATE OR REPLACE FUNCTION anamoly_log_trigger_fxn()
+CREATE OR REPLACE FUNCTION anomaly_log_trigger_fxn()
 RETURNS TRIGGER
 AS
 $$
 BEGIN 
   IF NEW.unit_price <0  or NEW.unit_price > 1000 THEN
-     INSERT INTO value_anamoly_log(id, created_at, created_by_user)
+     INSERT INTO value_anomaly_log(id, created_at, created_by_user)
     VALUES (NEW.product_id, NOW(), CURRENT_USER);
   END IF;
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE or REPLACE TRIGGER anamoly_log_trigger
+CREATE or REPLACE TRIGGER anomaly_log_trigger
 AFTER INSERT OR UPDATE
 ON product
 FOR EACH ROW
-EXECUTE PROCEDURE anamoly_log_trigger_fxn();
+EXECUTE PROCEDURE anomaly_log_trigger_fxn();
 
 
 -- Check item in value anamoly log table
-SELECT * FROM value_anamoly_log; -- it should be empty
+SELECT * FROM value_anomaly_log; -- it should be empty
 
 -- Now let insert values
 -- This should trigger the function

@@ -6,15 +6,16 @@ With transactions, either all the statements in a group execute or none of the s
 To revert the execution we use rollback.
 
 Usage:
-- 
+- Banking transaction where it's important to make sure all transaction pass or none of them pass.
+- Any transaction where all the transaction need to complete or none of them complete.
 
 Syntax:
 BEGIN TRANSACTION [TRANSACTION_NAME]
-    ... SQL statement(s)...
+    /*... SQL statement(s)...*/
 END;
 
-Example of rollback
-
+-- If rollback is present
+ROLLBACK TO [SAVEPOINT_NAME]
 Code Example:
 */
 

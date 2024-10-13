@@ -25,7 +25,7 @@ Usage:
 
 Syntax:
 SELECT [column(s)]
-FROM table1
+FROM table_name
 [join_type] join Table2
 ON CONDITION
 

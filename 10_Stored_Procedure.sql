@@ -35,7 +35,6 @@ update product set unit_price = round(cast(1.10 * unit_price as numeric), 2);
 
 end $$;
 
-
 -- To call the procedure you simply do:
 CALL increase_price_by_10_percentage();
 

@@ -46,7 +46,7 @@ select  product_id,
 group by sub.product_id
 
 
--- Example 3: checking if there are duplicate rows(/items) or not.
+-- Example 3: checking if there are duplicate rows(/items) or not. (Has a customer bought the same item?)
 select 
     customer_id, 
     product_id, 
