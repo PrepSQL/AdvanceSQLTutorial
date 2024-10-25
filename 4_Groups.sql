@@ -32,18 +32,16 @@ from orders
 group by product_id;
 
 
--- Example 2: lets calculate the total cost and get sum and average sales cost of an item
-select  product_id, 
-        sum(total_cost) as total_sales, 
-        sum(item_ordered_count) as total_item_sold,  
-        sum(total_cost)/sum(item_ordered_count) as average_cost 
-        from  (
-            select orders.item_ordered_count, orders.product_id, 
-            orders.item_ordered_count * unit_price as total_cost from orders
-            inner join product
-            on orders.product_id=product.product_id
-        ) sub
-group by sub.product_id
+-- Example 2: lets calculate total revenue per product.
+select 
+    orders.product_id, 
+    sum(orders.item_ordered_count) as total_items_sold, 
+    sum(orders.item_ordered_count * unit_price) as total_revenue_per_product
+from orders
+inner join product
+on orders.product_id=product.product_id
+group by orders.product_id
+order by orders.product_id
 
 
 -- Example 3: checking if there are duplicate rows(/items) or not. (Has a customer bought the same item?)
