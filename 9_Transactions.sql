@@ -12,7 +12,10 @@ Usage:
 Syntax:
 BEGIN TRANSACTION [TRANSACTION_NAME]
     /*... SQL statement(s)...*/
-END;
+COMMIT;
+
+-- If you want to save
+SAVEPOINT [savepoint_name]
 
 -- If rollback is present
 ROLLBACK TO [SAVEPOINT_NAME]
